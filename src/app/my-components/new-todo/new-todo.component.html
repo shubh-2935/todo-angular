@@ -1,0 +1,16 @@
+<div>
+    <h4>Add Todo</h4> 
+    <form (ngSubmit)="onSubmit()" style="border-radius: 1%; background-color: white; padding: 2%; box-shadow: 10px 10px 5px rgb(214, 226, 230) ; margin-bottom: 20px;">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input style="height: 30px;" type="text" class="form-control" id="title" aria-describedby="emailHelp"
+            name="title" [(ngModel)]="title">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input style="height: 30px;" type="text" class="form-control" id="description"
+            name="description" [(ngModel)]="description">
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Add Todo</button>
+    </form>
+</div>

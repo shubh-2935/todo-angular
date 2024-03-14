@@ -1,0 +1,10 @@
+<div class="my-3">
+    <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; flex-direction: row;">
+            <h5 [ngClass]="{'strike': !todo?.active}"  style="margin-right: 10px;">{{todo?.title}}</h5>
+            <input type="checkbox" (click)="onCheckboxClick()" [checked]="!todo?.active">
+        </div>
+            <button class="btn btn-danger btn-sm" (click)="onClick()">Delete</button>
+    </div>
+    <p [ngClass]="{'strike': !todo?.active}">{{todo?.description}}</p> 
+</div>
