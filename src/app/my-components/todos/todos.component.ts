@@ -13,34 +13,32 @@ import { NewTodoComponent } from "../new-todo/new-todo.component";
 })
 export class TodosComponent {
   todos: Todos[];
-  localItems: string | null;
 
   constructor(){
-    
-    this.localItems = localStorage.getItem("todos");
-    if(this.localItems === null){ 
-      this.todos = [];
-    }
-    else{
-      this.todos = JSON.parse(this.localItems);
-    }
+    this.todos = [{
+      title: 'Example Todo',
+      description: 'Description of Example Todo',
+      active: true,
+    },
+    {
+      title: 'Delete Todo',
+      description: 'Delete this example Todo and create your own',
+      active: true
+    }]
   }
 
   deleteTodo(todo: Todos){
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
-    localStorage.setItem("todos", JSON.stringify(this.todos));
   }
 
   todoAdd(todo: Todos){
     this.todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(this.todos));
   }
 
   toggleCheckBox(todo: Todos){
     const index = this.todos.indexOf(todo);
     this.todos[index].active = !this.todos[index].active;
-    localStorage.setItem("todos", JSON.stringify(this.todos));
   }
 
 }
