@@ -16,6 +16,7 @@
             "outputPath": "dist/todo-list",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/src/index.html/",
             "polyfills": [
               "zone.js"
             ],
